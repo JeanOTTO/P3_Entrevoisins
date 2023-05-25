@@ -6,15 +6,15 @@ EntreVoisins est une application Android en Java qui permet de lister les voisin
 ## Fonctionnalités
 Voici les principales fonctionnalités de l'application EntreVoisins :
 
-** - Liste des voisins :** Affiche une liste complète de tous les voisins enregistrés. Chaque élément de la liste affiche des informations basiques sur le voisin, telles que son nom et sa photo de profil.
+- **Liste des voisins :** Affiche une liste complète de tous les voisins enregistrés. Chaque élément de la liste affiche des informations basiques sur le voisin, telles que son nom et sa photo de profil.
 
-** - Ajout de voisin :** Permet à l'utilisateur d'ajouter un nouveau voisin à la liste. L'utilisateur peut saisir les informations du voisin, telles que le nom, l'adresse, le numéro de téléphone, etc.
+- **Ajout de voisin :** Permet à l'utilisateur d'ajouter un nouveau voisin à la liste. L'utilisateur peut saisir les informations du voisin, telles que le nom, l'adresse, le numéro de téléphone, etc.
 
-** - Suppression de voisin :** Permet à l'utilisateur de supprimer un voisin de la liste. L'utilisateur peut choisir un voisin dans la liste et le supprimer définitivement.
+- **Suppression de voisin :** Permet à l'utilisateur de supprimer un voisin de la liste. L'utilisateur peut choisir un voisin dans la liste et le supprimer définitivement.
 
-** - Affichage du profil :** Affiche les détails complets d'un voisin sélectionné. L'utilisateur peut consulter les informations détaillées du voisin, telles que le nom, l'adresse, le numéro de téléphone, etc.
+- **Affichage du profil :** Affiche les détails complets d'un voisin sélectionné. L'utilisateur peut consulter les informations détaillées du voisin, telles que le nom, l'adresse, le numéro de téléphone, etc.
 
-** - Ajout en favoris :** Permet de marquer un voisin comme favori et de les retrouver facilement dans une liste distincte.
+- **Ajout en favoris :** Permet de marquer un voisin comme favori et de les retrouver facilement dans une liste distincte.
 
 
 ## Installation
