@@ -8,18 +8,19 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
 
 
     <ImageView
-    android:id="@+id/imageViewTop"
-    android:layout_width="0dp"
-    android:layout_height="250dp"
-    android:scaleType="centerCrop"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:src="@tools:sample/avatars" />
+        android:id="@+id/ivAvatar"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:background="#1C1C1C"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/imageButtonBack"
+        android:id="@+id/ibtnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -27,11 +28,11 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
         android:contentDescription="back"
         android:src="?attr/homeAsUpIndicator"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewTop"
+        app:layout_constraintTop_toTopOf="@+id/ivAvatar"
         app:tint="#fff" />
 
 <TextView
-    android:id="@+id/textViewTopName"
+    android:id="@+id/tvName"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -39,11 +40,15 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
     android:text="Caroline"
     android:textColor="#FFFFFF"
     android:textSize="34sp"
-    app:layout_constraintBottom_toBottomOf="@+id/imageViewTop"
-    app:layout_constraintStart_toStartOf="@+id/imageViewTop" />
+    android:shadowColor="#80000000"
+    android:shadowDx="2"
+    android:shadowDy="2"
+    android:shadowRadius="4"
+    app:layout_constraintBottom_toBottomOf="@+id/ivAvatar"
+    app:layout_constraintStart_toStartOf="@+id/ivAvatar" />
 
 <androidx.cardview.widget.CardView
-    android:id="@+id/cardViewInfo"
+    android:id="@+id/cvInfo"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -53,14 +58,15 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageViewTop">
+    app:layout_constraintTop_toBottomOf="@+id/ivAvatar">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textViewInfoTitle"
+            android:id="@+id/tvInfoName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -72,108 +78,106 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/dividerInfo"
+            android:id="@+id/divInfo"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewInfoTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/tvInfoName" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/clAdress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-            app:layout_constraintStart_toStartOf="@id/dividerInfo"
-            app:layout_constraintTop_toTopOf="@id/dividerInfo">
+            app:layout_constraintBottom_toTopOf="@+id/clPhone"
+            app:layout_constraintStart_toStartOf="@id/divInfo"
+            app:layout_constraintTop_toTopOf="@id/divInfo">
 
             <ImageView
-                android:id="@+id/imageViewAdress"
+                android:id="@+id/ivAdress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/baseline_location_on_24"
-                app:tint="#fb80aa"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_location_on_24"
+                app:tint="#fb80aa" />
 
             <TextView
-                android:id="@+id/textViewAdress"
+                android:id="@+id/tvAdress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Saint Pierre du Mont à 5km"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imageViewAdress"
+                app:layout_constraintStart_toEndOf="@id/ivAdress"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
+            android:id="@+id/clPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-            app:layout_constraintStart_toStartOf="@id/constraintLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            app:layout_constraintBottom_toTopOf="@+id/clUrl"
+            app:layout_constraintStart_toStartOf="@id/clAdress"
+            app:layout_constraintTop_toBottomOf="@+id/clAdress">
 
             <ImageView
-                android:id="@+id/imagePhone"
+                android:id="@+id/ivPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/baseline_location_on_24"
-                app:tint="#fb80aa"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/baseline_phone_24" />
+                app:srcCompat="@drawable/baseline_phone_24"
+                app:tint="#fb80aa" />
 
             <TextView
-                android:id="@+id/textViewPhone"
+                android:id="@+id/tvPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="+33 6 12 23 45 65"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imagePhone"
+                app:layout_constraintStart_toEndOf="@id/ivPhone"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout4"
+            android:id="@+id/clUrl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/constraintLayout3"
-            app:layout_constraintTop_toBottomOf="@id/constraintLayout3">
+            app:layout_constraintStart_toStartOf="@id/clPhone"
+            app:layout_constraintTop_toBottomOf="@id/clPhone">
 
             <ImageView
-                android:id="@+id/imageViewUrl"
+                android:id="@+id/ivUrl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/baseline_location_on_24"
-                app:tint="#fb80aa"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/baseline_language_24" />
+                app:srcCompat="@drawable/baseline_language_24"
+                app:tint="#fb80aa" />
 
             <TextView
-                android:id="@+id/textViewUrl"
+                android:id="@+id/tvUrl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="www.facebook.fr/caroline"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imageViewUrl"
+                app:layout_constraintStart_toEndOf="@id/ivUrl"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -182,7 +186,7 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
 </androidx.cardview.widget.CardView>
 
 <androidx.cardview.widget.CardView
-    android:id="@+id/cardViewAbout"
+    android:id="@+id/cvAbout"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -193,14 +197,15 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
     app:cardMaxElevation="4dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/cardViewInfo">
+    app:layout_constraintTop_toBottomOf="@+id/cvInfo">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textViewAboutTitle"
+            android:id="@+id/tvAboutTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -212,17 +217,17 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/dividerAbout"
+            android:id="@+id/divAbout"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewAboutTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvAboutTitle" />
 
         <TextView
-            android:id="@+id/textViewText"
+            android:id="@+id/tvAboutText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -233,23 +238,22 @@ tools:context=".ui.neighbour_list.NeighbourProfileActivity">
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerAbout" />
+            app:layout_constraintTop_toBottomOf="@+id/divAbout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 
-<androidx.cardview.widget.CardView
-    android:id="@+id/floatingActionFavorite"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="232dp"
-    android:layout_marginEnd="16dp"
-    android:clickable="true"
-    android:contentDescription="Favorite"
-    android:src="@drawable/ic_star_white_24dp"
-    android:tint="#FDCA27"
-    app:backgroundTint="#FFFFFF"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/imageViewTop" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivAvatar"
+        app:srcCompat="@drawable/ic_star_white_24dp"
+        app:tint="@color/fab_favorite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
