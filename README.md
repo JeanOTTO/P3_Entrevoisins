@@ -1,4 +1,4 @@
-#**EntreVoisins**
+**#EntreVoisins**
 EntreVoisins est une application Android en Java qui permet de lister les voisins pour favoriser l'entraide entre voisins. L'application offre plusieurs fonctionnalités pour gérer la liste des voisins, ajouter des voisins, supprimer des voisins, afficher leurs profils et ajouter des voisins en favoris.
 
 ##**Fonctionnalités**
