@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.databinding.FragmentFavoriteNeighbourBinding;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
@@ -33,6 +34,7 @@ public class FavoriteNeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mFavoriteNeighbours;
     private RecyclerView mRecyclerView;
+    private FragmentFavoriteNeighbourBinding binding;
 
     public static FavoriteNeighbourFragment newInstance() {
         return new FavoriteNeighbourFragment();
@@ -47,11 +49,16 @@ public class FavoriteNeighbourFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_favorite_neighbour, container, false);
+
+        binding = FragmentFavoriteNeighbourBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+/*      View view = inflater.inflate(R.layout.fragment_favorite_neighbour, container, false);*/
+
         Context context = view.getContext();
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+
         return view;
     }
 
