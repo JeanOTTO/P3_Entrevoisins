@@ -124,6 +124,10 @@ public class NeighboursListTest {
      */
     @Test
     public void myFavoritesList_onlyFavoriteNeighbours() {
+        // Vérifie le nombre d'éléments dans la liste des favoris "list_fav_neighbours" (= 0)
+        onView(withId(R.id.list_fav_neighbours))
+                .check(withItemCount(0));
+
         // Clique sur un neighbour dans la liste
         onView(withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(1, ViewActions.click()));
@@ -135,7 +139,7 @@ public class NeighboursListTest {
         // Retourne en arrière
         onView(isRoot()).perform(pressBack());
 
-        // Vérifie le nombre d'éléments dans la liste des favoris "list_fav_neighbours"
+        // Vérifie le nombre d'éléments dans la liste des favoris "list_fav_neighbours" (= 1)
         onView(withId(R.id.list_fav_neighbours))
                 .check(withItemCount(1));
     }

@@ -11,9 +11,6 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
-    /**
-     * getItem is called to instantiate the fragment for the given page.
-     */
     @Override
     public Fragment getItem(int position) {
         switch (position) {
@@ -26,9 +23,6 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
-    /**
-     * @return the number of pages
-     */
     @Override
     public int getCount() {
         return 2;
