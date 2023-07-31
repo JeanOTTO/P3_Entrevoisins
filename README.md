@@ -18,4 +18,22 @@ Voici les principales fonctionnalités de l'application EntreVoisins :
 
 
 ## Installation
-Pour utiliser l'application EntreVoisins, suivez les étapes ci-dessous :
+
+- **Prérequis :** Assurez-vous d'avoir Android Studio installé sur votre machine. Vous pouvez le télécharger depuis le site officiel d'Android Studio : https://developer.android.com/studio.
+
+- **Clonage du projet :** Clonez ce dépôt de code sur votre machine en utilisant la commande suivante :
+
+  ```
+  git clone https://github.com/JeanOTTO/P3_Entrevoisins.git
+  ```
+
+- **Ouvrir le projet dans Android Studio :**
+
+  + Lancez Android Studio.
+  + Cliquez sur "File" (Fichier) dans la barre de menu.
+  + Sélectionnez "Open" (Ouvrir) et recherchez le répertoire du projet que vous avez cloné.
+  + Sélectionnez le répertoire du projet et cliquez sur "OK".
+   
+- **Synchronisation du projet :** Une fois le projet ouvert dans Android Studio, attendez que la synchronisation se termine. Si nécessaire, Android Studio téléchargera automatiquement les dépendances nécessaires.
+
+- **Exécution du projet :** Vous pouvez maintenant exécuter le projet en appuyant sur le bouton "Run" (Exécuter) dans Android Studio. Assurez-vous d'avoir un émulateur Android ou un appareil physique connecté pour exécuter l'application.
