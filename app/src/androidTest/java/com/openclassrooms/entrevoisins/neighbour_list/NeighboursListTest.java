@@ -85,7 +85,7 @@ public class NeighboursListTest {
 
     /**
     * Test vérifiant que lorsqu’on clique sur un élément de la liste, l’écran de
-    * étails est bien lancé
+    * profils est bien lancé
     */
     @Test
     public void myNeighboursList_clickOnNeighbour_shouldOpenProfile() {

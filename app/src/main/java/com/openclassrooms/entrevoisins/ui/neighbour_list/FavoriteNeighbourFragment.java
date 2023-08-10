@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.databinding.FragmentFavoriteNeighbourBinding;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
@@ -67,7 +66,7 @@ public class FavoriteNeighbourFragment extends Fragment {
      */
     private void initList() {
         mFavoriteNeighbours = mApiService.getFavoriteNeighbours();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavoriteNeighbours));
+        mRecyclerView.setAdapter(new NeighbourRecyclerViewAdapter(mFavoriteNeighbours));
     }
 
     @Override
